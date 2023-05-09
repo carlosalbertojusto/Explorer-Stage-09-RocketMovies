@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Link } from "react-router-dom"
+import styled from 'styled-components'
+
 export const Container = styled.div`
   grid-area: header;
   width: 100%;
@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 `
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: flex;
   gap: 0.9rem;
   align-items: center;
@@ -51,5 +51,9 @@ export const Profile = styled(Link)`
     height: 6.4rem;
     border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_600};
     border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `

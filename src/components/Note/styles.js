@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { Link } from "react-router-dom"
-export const Container = styled(Link)`
+import styled from 'styled-components'
+
+export const Container = styled.div`
   width: 100%;
   height: 22rem;
   background-color: rgba(255, 133, 155, 0.05);
@@ -27,7 +27,7 @@ export const Container = styled(Link)`
     font-size: 1.6rem;
     line-height: 1.9rem;
     text-align: justify;
-    
+
     width: 100%;
     height: 5.2rem;
     color: ${({ theme }) => theme.COLORS.GRAY_300};

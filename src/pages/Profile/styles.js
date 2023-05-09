@@ -1,7 +1,8 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
+
   > header {
     width: 100%;
     height: 14.4rem;
@@ -9,7 +10,13 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     padding: 0 12.4rem;
-    a {
+
+    button {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
       font-size: 1.6rem;
       font-weight: 400;
       line-height: 2.1rem;
@@ -73,7 +80,7 @@ export const Form = styled.form`
     margin-top: 2.4rem;
   }
 
-  > div:nth-child(5){
+  > div:nth-child(5) {
     margin-bottom: 2.4rem;
   }
 `
