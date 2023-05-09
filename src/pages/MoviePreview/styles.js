@@ -1,21 +1,32 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
+  max-width: 100%;
 `
 
 export const Informations = styled.div`
   max-width: 111rem;
-  height: 58rem;
+  max-height: 58rem;
+
   display: flex;
   flex-direction: column;
+
   margin: 4rem auto;
   padding: 0 2.4rem 0 0;
   gap: 4rem;
+
+  overflow-y: overlay;
   > header {
     display: flex;
     align-items: center;
-    a {
+
+    button {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       font-weight: 400;
       font-size: 1.6rem;
       line-height: 2.1rem;
@@ -26,6 +37,17 @@ export const Informations = styled.div`
       line-height: 2.1rem;
       color: ${({ theme }) => theme.COLORS.PINK};
     }
+  }
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+    border-radius: 0.8rem;
   }
 
   > .infoAndRating {

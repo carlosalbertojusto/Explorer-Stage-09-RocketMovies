@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -44,6 +44,7 @@ export const Informations = styled.div`
 export const Section = styled.section`
   width: 100%;
   margin-top: 4rem;
+
   > h2 {
     margin-bottom: 2.4rem;
 
@@ -58,6 +59,7 @@ export const Section = styled.section`
     gap: 2.4rem;
     padding: 1.6rem;
     background-color: ${({ theme }) => theme.COLORS.BLACK};
+
     border-radius: 0.8rem;
   }
 `

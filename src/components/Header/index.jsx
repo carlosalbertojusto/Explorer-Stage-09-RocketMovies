@@ -1,20 +1,46 @@
-import { Container, Profile } from "./styles"
-import { Input } from "../Input"
-export function Header() {
-  return (
-    <Container >
-      <h1>RocketMovies</h1>
-      <Input placeholder="Pesquisar pelo título" />
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
-      <Profile to="/profile">
+import { Container, Profile } from './styles'
+import { Input } from '../Input'
+
+import { api } from '../../services/api'
+
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../hooks/auth'
+
+export function Header({ handleSearchMovies }) {
+  const { signOut, user } = useAuth()
+  const navigation = useNavigate()
+
+  function handleSignOut() {
+    navigation('/')
+    signOut()
+  }
+  function handleProfile() {
+    navigation('/profile')
+  }
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder
+
+  return (
+    <Container>
+      <h1>RocketMovies</h1>
+
+      <Input
+        placeholder="Pesquisar pelo título"
+        onChange={handleSearchMovies}
+      />
+
+      <Profile>
         <div>
-          <p>Carlos Alberto</p>
-          <button>sair</button>
+          <p>{user.name}</p>
+          <button type="button" onClick={handleSignOut}>
+            sair
+          </button>
         </div>
-        <img
-          src="https://github.com/carlosalbertojusto.png"
-          alt="Foto do usuário"
-        />
+        <img src={avatarUrl} alt="Foto do usuário" onClick={handleProfile} />
       </Profile>
     </Container>
   )
